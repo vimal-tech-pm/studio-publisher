@@ -1,0 +1,8 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Signing in – Studio Publisher</title><link rel="stylesheet" href="style.css"></head><body>
+<h1>Studio Publisher</h1><p id="m">Finishing sign-in…</p>
+<script>
+// TikTok returns ?code=…&state=… here; hand it to the owner's local Studio Publisher app.
+var q = location.search;
+if (q.indexOf('code=') > -1 || q.indexOf('error=') > -1) { location.replace('http://localhost:8765/callback' + q); }
+else { document.getElementById('m').textContent = 'Nothing to do here.'; }
+</script></body></html>
